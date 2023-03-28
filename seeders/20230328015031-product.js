@@ -12,31 +12,24 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-    const usersArr = [];
-    for (let i = 0; i < 100; i++) {
-      let phone = '000';
-      if (i < 10) {
-        phone = `00${i}`
-      } else if (i => 10 && i < 100) {
-        phone = `0${i}`
-      }
 
-      usersArr.push({
-        username: `user${i}`,
-        password: `user${i}`,
-        phone: `12345678${phone}`,
-        sex: '1',
-        isAdmin: '0',
+
+
+    const productArr = [];
+    for (let i = 0; i < 100; i++) {
+      productArr.push({
+        name: `房间${i}`,
+        address: `房间${i}-详情`,
+        price: i,
         createdAt: new Date(),
         updatedAt: new Date()
       })
     }
     // users => 表名
-    return queryInterface.bulkInsert('users', usersArr, {});
+    return queryInterface.bulkInsert('products', productArr, {});
   },
 
   async down(queryInterface, Sequelize) {
-    queryInterface.bulkDelete('users', null, {});
     /**
      * Add commands to revert seed here.
      *

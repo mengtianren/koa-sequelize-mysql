@@ -10,9 +10,11 @@
   },
   "dependencies": {
     "co": "^4.6.0",
+    "dayjs": "^1.11.7",
     "debug": "4.3.4",
     "jade": "^1.11.0",
     "koa": "^2.14.1",
+    "koa-body": "^6.0.1",
     "koa-bodyparser": "4.3.0",
     "koa-json": "2.0.2",
     "koa-jwt": "^4.0.4",

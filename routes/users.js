@@ -1,36 +1,51 @@
 /**用户相关 */
 var router = require('koa-router')();
-const { dict, user } = require('../models');
+const { dict, user, userProduct, product } = require('../models');
 router.prefix('/api/user');
+/**登录 username password */
+
 /**获取登录用户信息 */
 router.get('/info', async (ctx) => {
-  console.log(ctx.state.user.phone)
-  // try {
-  const users = await user.findOne({
-    where: {
-      phone: ctx.state.user.phone
-    },
+  const { user: users } = ctx.state
+  ctx.success(users, '获取成功')
+});
+/** 用户信息更新 */
+router.post('/update', async (ctx) => {
+  const { request: { body: { password = '1234567', sex = '1', username = '神秘用户', isAdmin = '0', address = '客户标注' } = {} } = {} } = ctx;
+  const { user: { id = '' } = {} } = ctx.state
+  if (!id) {
+    return ctx.error('请选择用户', 500)
+  }
+  const myUser = await user.findOne({
+    where: { id },
     attributes: {
-      excludes: ['password']
+      exclude: ['password']
     }
+  });
+  await myUser.update({
+    isAdmin,
+    username,
+    sex,
+    password,
+    address
   })
-  ctx.body = users
-  // } catch (error) {
-
-  //   ctx.body = '错误'
-  // }
-  // console.log(333, users, 444)
-  // if (users) {
-  //   ctx.body = users
-  // } else {
-  //   ctx.body = '系统错误'
-  // }
-
+  ctx.success(myUser, '修改成功')
 });
+// 获取用户所有预订房间
+router.get('/product', async (ctx) => {
+  const { state: { user: { id = '' } = {} } = {} } = ctx;
+  const list = await userProduct.findAll({
+    where: { uid: id },
+    include: {
+      association: userProduct.belongsTo(product, { foreignKey: 'pid', targetKey: 'id', }),
+      attributes: {
+        exclude: ['id']
+      }
+    }
+  });
+  ctx.success(list);
+})
 
-router.get('/bar', (next) => {
-  this.body = 'this is a users/bar response!';
-});
 
 
 
