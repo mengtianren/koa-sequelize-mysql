@@ -1,0 +1,370 @@
+{
+	"info": {
+		"_postman_id": "dbd40b54-e0fe-4978-a56e-426d5770adaf",
+		"name": "酒店管理系统后台请求接口",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "用户相关",
+			"item": [
+				{
+					"name": "用户注册",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "phone",
+									"value": "13233703395",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "sex",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "孟天任",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:3000/api/base/register"
+					},
+					"response": []
+				},
+				{
+					"name": "登录",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "phone",
+									"value": "13233703395",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:3000/api/base/login"
+					},
+					"response": []
+				},
+				{
+					"name": "获取用户信息",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAxLCJ1c2VybmFtZSI6IuWtn-WkqeS7uyIsInBob25lIjoiMTMyMzM3MDMzOTUiLCJzZXgiOiIxIiwiYWRkcmVzcyI6bnVsbCwic3RhZmYiOm51bGwsImJyaXRoZGF5IjpudWxsLCJpc0FkbWluIjoiMCIsImNyZWF0ZWRBdCI6IjIwMjMtMDMtMjhUMDc6MDY6MzMuMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjMtMDMtMjhUMDc6MDY6MzMuMDAwWiIsImlhdCI6MTY3OTk4NzE5NiwiZXhwIjoxNjc5OTkwNzk2fQ.jQE8jP_1v2l6kEa2u4pHL1swF-4uiB7G4n3g3NvLbGg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": "http://localhost:3000/api/user/info"
+					},
+					"response": [
+						{
+							"name": "获取用户信息",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiLlrZ_lpKnku7siLCJwaG9uZSI6IjEzMjMzNzAzMzk1Iiwic2V4IjoiMSIsImFkZHJlc3MiOm51bGwsInN0YWZmIjpudWxsLCJicml0aGRheSI6bnVsbCwiaXNBZG1pbiI6IjAiLCJjcmVhdGVkQXQiOiIyMDIzLTAzLTI3VDExOjI1OjA4LjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDIzLTAzLTI3VDExOjI1OjA4LjAwMFoiLCJpYXQiOjE2Nzk5MTYzNTAsImV4cCI6MTY3OTkxOTk1MH0.rUwzdBKM1_rL6neeY8sGgNSw7FY9j4DtqGgbCo_b4so",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": "http://localhost:3000/api/user/info"
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "用户信息更新",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiLlrZ_lpKnku7siLCJwaG9uZSI6IjEzMjMzNzAzMzk1Iiwic2V4IjoiMSIsImFkZHJlc3MiOm51bGwsInN0YWZmIjpudWxsLCJicml0aGRheSI6bnVsbCwiaXNBZG1pbiI6IjAiLCJjcmVhdGVkQXQiOiIyMDIzLTAzLTI3VDExOjI1OjA4LjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDIzLTAzLTI3VDExOjI1OjA4LjAwMFoiLCJpYXQiOjE2Nzk5MTYzNTAsImV4cCI6MTY3OTkxOTk1MH0.rUwzdBKM1_rL6neeY8sGgNSw7FY9j4DtqGgbCo_b4so",
+								"type": "text"
+							},
+							{
+								"key": "username",
+								"value": "帅哥",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "帅哥怒骂",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:3000/api/user/update"
+					},
+					"response": []
+				},
+				{
+					"name": "获取用户在酒店住的次数和详情",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzAxLCJ1c2VybmFtZSI6IuWtn-WkqeS7uyIsInBob25lIjoiMTMyMzM3MDMzOTUiLCJzZXgiOiIxIiwiYWRkcmVzcyI6bnVsbCwic3RhZmYiOm51bGwsImJyaXRoZGF5IjpudWxsLCJpc0FkbWluIjoiMSIsImNyZWF0ZWRBdCI6IjIwMjMtMDMtMjhUMDg6MTM6MTYuMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjMtMDMtMjhUMDg6MTM6MTYuMDAwWiIsImlhdCI6MTY3OTk5MTI1NiwiZXhwIjoxNjc5OTk0ODU2fQ.t3TSR2N6E0CSfPTlL9titgPbrZ9t9G9-YFEygu9DAdU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": "{{server_url}}user/product"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "酒店列表",
+			"item": [
+				{
+					"name": "列表",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/api/base/product"
+					},
+					"response": []
+				},
+				{
+					"name": "详情",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/base/product/detail?id=100",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"base",
+								"product",
+								"detail"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "预订房间",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAxLCJ1c2VybmFtZSI6IuWtn-WkqeS7uyIsInBob25lIjoiMTMyMzM3MDMzOTUiLCJzZXgiOiIxIiwiYWRkcmVzcyI6bnVsbCwic3RhZmYiOm51bGwsImJyaXRoZGF5IjpudWxsLCJpc0FkbWluIjoiMCIsImNyZWF0ZWRBdCI6IjIwMjMtMDMtMjhUMDc6MDY6MzMuMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjMtMDMtMjhUMDc6MDY6MzMuMDAwWiIsImlhdCI6MTY3OTk4NzE5NiwiZXhwIjoxNjc5OTkwNzk2fQ.jQE8jP_1v2l6kEa2u4pHL1swF-4uiB7G4n3g3NvLbGg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "uid",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": "{{server_url}}product"
+					},
+					"response": []
+				},
+				{
+					"name": "房间修改",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzAxLCJ1c2VybmFtZSI6IuWtn-WkqeS7uyIsInBob25lIjoiMTMyMzM3MDMzOTUiLCJzZXgiOiIxIiwiYWRkcmVzcyI6bnVsbCwic3RhZmYiOm51bGwsImJyaXRoZGF5IjpudWxsLCJpc0FkbWluIjoiMSIsImNyZWF0ZWRBdCI6IjIwMjMtMDMtMjhUMDg6MTM6MTYuMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjMtMDMtMjhUMDg6MTM6MTYuMDAwWiIsImlhdCI6MTY3OTk5MTI1NiwiZXhwIjoxNjc5OTk0ODU2fQ.t3TSR2N6E0CSfPTlL9titgPbrZ9t9G9-YFEygu9DAdU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "豪华总统套房",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "这是豪华总统套房的详情介绍blabla",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "188",
+									"type": "text"
+								},
+								{
+									"key": "urls",
+									"value": "/public/5749e000ffa35db67ffe0dd01.png",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/product/detail",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								"detail"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "100",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "新建请求",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "获取文件-直链",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NjAyLCJ1c2VybmFtZSI6IuWtn-WkqeS7uyIsInBob25lIjoiMTMyMzM3MDMzOTUiLCJzZXgiOiIxIiwiYWRkcmVzcyI6bnVsbCwic3RhZmYiOm51bGwsImJyaXRoZGF5IjpudWxsLCJpc0FkbWluIjoiMCIsImNyZWF0ZWRBdCI6IjIwMjMtMDMtMjhUMDM6MDA6NTEuMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjMtMDMtMjhUMDM6MDA6NTEuMDAwWiIsImlhdCI6MTY3OTk3NDI2OSwiZXhwIjoxNjc5OTc3ODY5fQ.ycpJk-JTq9ILp1JLhjXdzDGyRLMKSdEyEbczos-Z5_g",
+						"type": "text"
+					}
+				],
+				"url": "http://localhost:3000/images/70690ac9803ab0ec655faba00.png"
+			},
+			"response": []
+		},
+		{
+			"name": "上传文件",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzAxLCJ1c2VybmFtZSI6IuWtn-WkqeS7uyIsInBob25lIjoiMTMyMzM3MDMzOTUiLCJzZXgiOiIxIiwiYWRkcmVzcyI6bnVsbCwic3RhZmYiOm51bGwsImJyaXRoZGF5IjpudWxsLCJpc0FkbWluIjoiMSIsImNyZWF0ZWRBdCI6IjIwMjMtMDMtMjhUMDg6MTM6MTYuMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjMtMDMtMjhUMDg6MTM6MTYuMDAwWiIsImlhdCI6MTY3OTk5MTI1NiwiZXhwIjoxNjc5OTk0ODU2fQ.t3TSR2N6E0CSfPTlL9titgPbrZ9t9G9-YFEygu9DAdU",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "multipart/form-data",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "files",
+							"type": "file",
+							"src": "/D:/Desktop/1cb0e63c-89e4-47f5-8854-a722af36bdf9地球2.png"
+						}
+					]
+				},
+				"url": "http://localhost:3000/api/upload"
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "Authorization",
+			"value": "Authorization"
+		}
+	]
+}
